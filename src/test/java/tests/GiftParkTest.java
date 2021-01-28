@@ -1,7 +1,5 @@
 package tests;
 
-import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -26,17 +24,22 @@ public class GiftParkTest {
 	public void tearDown() throws Exception {
 		driver.quit();
 	}
+	
+	//capturar whatsapp de site
+	//fazer login
+	//asserts
+	//etc
 
 	@Test
-	public void capturarWhatsApp() {
+	public void testeGoogle() {
 		try {
 			driver.manage().window().maximize();
 			driver.manage().deleteAllCookies();
 			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.get("https://www.google.com/");
-			driver.findElement(By.name("q")).sendKeys("Java"); //name locator for text box
-			WebElement searchbutton = driver.findElement(By.name("btnK"));//name locator for google search
+			driver.findElement(By.name("q")).sendKeys("Java");
+			WebElement searchbutton = driver.findElement(By.name("btnK"));
 			searchbutton.submit();
 			Thread.sleep(5000);
 
